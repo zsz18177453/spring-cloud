@@ -1,0 +1,17 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://eureka.basicedu.chaoxing.com/eureka/
+server:
+  port: 8769
+spring:
+  application:
+    name: service-zuul
+zuul:
+  routes:
+    api-a:
+      path: /api-a/**
+      serviceId: provider
+    api-b:
+      path: /api-b/**
+      url: http://www.baidu.com
